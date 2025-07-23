@@ -5,7 +5,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/verify" element={<Verification />} />    
+        <Route path="/" element={<Verification />} />
       </Routes>
     </BrowserRouter>
   );
