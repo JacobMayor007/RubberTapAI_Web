@@ -50,11 +50,13 @@ export default function ForgotPassword() {
 
       const promise = await account.updateRecovery(userId, secret, confirm);
 
-      if (promise.onOk) {
+      if (promise) {
         alert(
           "Password Successfully Change. You can go back to RubberTapAI app now."
         );
-        navigate(-1);
+        setTimeout(() => {
+          window.location.reload();
+        }, [1500]);
         return;
       }
     } catch (error) {
@@ -183,7 +185,10 @@ export default function ForgotPassword() {
       </button>
       <Modal
         onCancel={() => setModal(false)}
-        onOk={changePassword}
+        onOk={() => {
+          changePassword();
+          setModal(false);
+        }}
         open={modal}
         centered
       >
