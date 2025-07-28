@@ -8,6 +8,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Verification />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="*" element={<Navigate to="https://www.google.com" />} />
       </Routes>
     </BrowserRouter>
   );
