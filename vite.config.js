@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react'; // ✅ Add this
-import tailwindcss from '@tailwindcss/vite';
+import react from '@vitejs/plugin-react'; 
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [
-    react(),           // ✅ Enables automatic JSX runtime
+    react(),  
     tailwindcss(),
   ],
 });

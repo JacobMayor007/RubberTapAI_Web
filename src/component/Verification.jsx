@@ -8,15 +8,21 @@ import { ArrowPathIcon } from "@heroicons/react/24/solid";
 
 export default function Verification() {
   const location = useLocation();
-  const [status, setStatus] = useState("success");
+  const [status, setStatus] = useState("error");
   useEffect(() => {
     const verifyAccount = async () => {
       try {
         const query = new URLSearchParams(location.search);
         const userId = query.get("userId");
         const secret = query.get("secret");
-
-        if (!userId || !secret) throw new Error("Missing verification data");
+        if (!userId || !secret) {
+          console.log("Missing verification data");
+          setTimeout(() => {
+            window.location.href = "https://www.google.com/";
+          }, 1000);
+          alert("Missing data");
+          return;
+        }
 
         const response = await account.updateVerification(userId, secret);
         console.log("Verification success:", response);
