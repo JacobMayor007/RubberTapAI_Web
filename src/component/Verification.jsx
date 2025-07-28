@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { account } from "../lib/appwrite";
 import background from "../assets/Rubber Farm Image7.png";
 
@@ -9,6 +9,7 @@ import { ArrowPathIcon } from "@heroicons/react/24/solid";
 export default function Verification() {
   const location = useLocation();
   const [status, setStatus] = useState("error");
+  const navigate = useNavigate();
   useEffect(() => {
     const verifyAccount = async () => {
       try {
