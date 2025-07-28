@@ -22,7 +22,7 @@ export default function ForgotPassword() {
           ("Missing verification data");
           alert("Missing data");
           setTimeout(() => {
-            navigate("https://www.google.com/");
+            window.location.href = "https://www.google.com/";
           }, 1000);
           return;
         }
