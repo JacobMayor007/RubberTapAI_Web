@@ -17,9 +17,7 @@ export default function Verification() {
         const secret = query.get("secret");
         if (!userId || !secret) {
           console.log("Missing verification data");
-          setTimeout(() => {
-            window.location.href = "https://www.google.com/";
-          }, 1000);
+          navigate("/not-found");
           alert("Missing data");
           return;
         }

@@ -20,10 +20,7 @@ export default function ForgotPassword() {
       try {
         if (!userId || !secret) {
           ("Missing verification data");
-          alert("Missing data");
-          setTimeout(() => {
-            window.location.href = "https://www.google.com/";
-          }, 1000);
+          navigate("/not-found");
           return;
         }
       } catch (error) {
